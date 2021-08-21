@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">E-Book</string>
+    <string name="backdrop_title">Sherlock Holmes</string>
+    <string name="backdrop_subtitle">The Sherlock Holmes Book\'s Collection</string>
+</resources>
