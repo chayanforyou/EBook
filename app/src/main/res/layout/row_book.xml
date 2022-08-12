@@ -16,35 +16,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
-                android:src="@drawable/book_2"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:src="@drawable/book_2" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/thumbnail"
-                android:paddingLeft="@dimen/album_title_padding"
-                android:paddingTop="@dimen/album_title_padding"
-                android:paddingRight="@dimen/album_title_padding"
+                android:paddingHorizontal="@dimen/album_title_padding"
+                android:paddingVertical="@dimen/album_title_padding"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title"
+                android:textSize="@dimen/album_title_size"
+                android:textStyle="bold"
                 tools:text="Book Title" />
-
-            <me.zhanghai.android.materialratingbar.MaterialRatingBar
-                android:id="@+id/rating"
-                style="@style/Widget.MaterialRatingBar.RatingBar.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/title"
-                android:paddingLeft="@dimen/album_title_padding"
-                android:paddingRight="@dimen/album_title_padding"
-                android:paddingBottom="@dimen/songs_count_padding_bottom"
-                android:rating="3.5" />
 
         </RelativeLayout>
 
