@@ -49,12 +49,11 @@ public class BooksAdapter extends ListAdapter<Book, BooksAdapter.MyViewHolder> {
 
         public void bind(Book book) {
             binding.title.setText(book.getName());
-            //binding.rating.setRating((float) book.getRating());
 
             // loading album cover using Glide library
             Glide.with(mContext).load(Constant.BASE_URL + book.getThumbnail()).into(binding.thumbnail);
 
-            itemView.setOnClickListener(v -> PdfView.openPdfFromAsset(mContext, book.getName()));
+            itemView.setOnClickListener(v -> PdfView.openPDF(mContext, book.getName(), Constant.BASE_URL + book.getPdfLink()));
         }
     }
 }
