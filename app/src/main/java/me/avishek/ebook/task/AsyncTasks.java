@@ -14,7 +14,8 @@ public abstract class AsyncTasks<Params, Result> {
         this.executors = Executors.newSingleThreadExecutor();
     }
 
-    private void startBackground(Params params) {
+    @SafeVarargs
+    private final void startBackground(Params... params) {
         onPreExecute();
         executors.execute(() -> {
             Result result = doInBackground(params);
@@ -22,7 +23,8 @@ public abstract class AsyncTasks<Params, Result> {
         });
     }
 
-    public void execute(Params params) {
+    @SafeVarargs
+    public final void execute(Params... params) {
         startBackground(params);
     }
 
@@ -34,7 +36,8 @@ public abstract class AsyncTasks<Params, Result> {
         return executors.isShutdown();
     }
 
-    protected abstract Result doInBackground(Params params);
+    @SuppressWarnings("unchecked")
+    protected abstract Result doInBackground(Params... params);
 
     protected void onPreExecute() {
         throw new RuntimeException("Stub!");

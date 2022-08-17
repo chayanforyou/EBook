@@ -54,11 +54,11 @@ public class PdfView extends AppCompatActivity {
         }
 
         @Override
-        protected InputStream doInBackground(String pdfUrl) {
+        protected InputStream doInBackground(String... urls) {
             InputStream inputStream = null;
 
             try {
-                URL url = new URL(pdfUrl);
+                URL url = new URL(urls[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 if (urlConnection.getResponseCode() == 200) {
                     inputStream = new BufferedInputStream(urlConnection.getInputStream());
